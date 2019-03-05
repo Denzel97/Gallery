@@ -1,0 +1,7 @@
+{%extends 'all-galla/base.html'%}
+{% include 'index.html'%}
+<h1> Welcome to the My-Gallery</h1>
+{% for image in images %}
+{{image.title}}
+<img src="{{image.image.url}}" style="width:100px;height:100px;">
+{% endfor %}
