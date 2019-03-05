@@ -7,7 +7,7 @@
 		{% for image_item in images %}
 		<div class="col-md-4">
 			<div class="card">
-				<img class="img-responsive" style='width:100%; height:200px' src="{{image_item.image_name.url}}" alt="image">
+				<a href="{{image_item.image_name.url}}" data-0fancybox="images"><img class="img-responsive" style='width:100%; height:200px' src="{{image_item.image_name.url}}" alt="image"></a>
 				<p class="title">{{image_item.title}}</p>
 			</div>
 		</div>
