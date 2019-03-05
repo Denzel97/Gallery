@@ -3,23 +3,58 @@
 <div class="container">
 
   <div class="row">
-    {% if location%}
-    <h2>Found {{ location|length }} of searched term {{message}}</h2>
+    {% if categories%}
+    <h2>Found {{ categories|length }} of searched term {{message}}</h2>
     {% else %}
-    <h2> Found 0 locations for the search term {{message}}</h2>
+    <h2> Found 0 categories for the search term {{message}}</h2>
     {% endif %}
 
   </div>
 
   <div class="row">
 
-    {% if locations %}
-    {% for location in locations %}
-    <div class="col-sm-6 col-md-3">
-      <h1>{{article.title}}</h1>
+    {% if categories %}
+    {% for category in categories %}
+    <h1>{{category.title}}</h1>
+    <div class="col-md-4">
+      <div class="card">
+        <img class="img-responsive" style='width:100%; height:200px' src="{{image_item.image_name.url}}" alt="image">
+        <p class="title">{{category.title}}</p>
+      </div>
     </div>
-    {% endfor %}
-    {% endif %}
+
   </div>
+  {% endfor %}
+  {% endif %}
 </div>
+
+
+<style media="screen">
+img{
+	border-radius: 2px;
+}
+.card {
+	margin-top: 3%;
+	border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 375px;
+  /* margin: auto; */
+  text-align: center;
+	background-color: #000;
+}
+
+.title {
+  font-size: 18px;
+	border: none;
+	display: inline-block;
+	padding: 8px;
+	color: white;
+	background-color: #000;
+	text-align: center;
+	width: 100%;
+}
+.title:hover{
+	opacity: 0.7;
+}
+</style>
 {% endblock %}

@@ -14,13 +14,13 @@ def welcome(request):
 
 def search_results(request):
 
-    if 'location' in request.GET and request.GET["location"]:
-        search_term = request.GET.get("title")
-        searched_locations = Location.search_by_title(search_term)
+    if 'category' in request.GET and request.GET["category"]:
+        search_term = request.GET.get("category")
+        searched_categories = Image.search_category(search_term)
         message = f"{search_term}"
 
-        return render(request, 'all-news/search.html',{"message":message,"articles": searched_articles})
+        return render(request, 'all-galla/search.html',{"message":message,"categories": searched_categories})
 
     else:
         message = "You haven't searched for any term"
-        return render(request, 'all-news/search.html',{"message":message})
+        return render(request, 'all-galla/search.html',{"message":message})
