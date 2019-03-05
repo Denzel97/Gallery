@@ -23,7 +23,6 @@ class Image(models.Model):
     title = models.CharField(max_length=30, unique=True)
     location_name = models.ForeignKey(Location)
     category_name = models.ForeignKey(Category)
-    image_path = models.ImageField(upload_to = 'pictures/')
     pub_date = models.DateTimeField(auto_now_add=True)
     image_name = models.ImageField(upload_to = 'images/', null=True)
 
